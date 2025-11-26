@@ -33,6 +33,32 @@ public class PointDAO {
         }
     }
     
+    /**
+     * 총 획득 포인트 조회 (감소 제외, 증가만 합산)
+     * 
+     * @param userIdentifier 사용자 식별자
+     * @return 총 획득 포인트 (양수만 합산)
+     */
+    public int getTotalEarnedPoints(String userIdentifier) {
+        String sql = "SELECT SUM(points_change) as total_earned " +
+                    "FROM Point_History " +
+                    "WHERE user_identifier = ? AND points_change > 0";
+        
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, userIdentifier);
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()) {
+                return rs.getInt("total_earned");
+            } else {
+                return 0;
+            }
+        } catch (SQLException e) {
+            System.err.println("총 획득 포인트 조회 실패: " + e.getMessage());
+            return 0;
+        }
+    }
+    
     private void initializeUserPoints(String userIdentifier) {
         String sql = "INSERT INTO Points (user_identifier, total_points, last_update_date) VALUES (?, 0, ?)";
         
