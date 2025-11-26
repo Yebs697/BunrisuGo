@@ -62,7 +62,7 @@ public class PointTestMain extends JFrame {
         btnOpenPointView.setBackground(new Color(76, 175, 80));
         btnOpenPointView.setForeground(Color.WHITE);
         btnOpenPointView.addActionListener(e -> {
-        	new PointView(userIdentifier).setVisible(true);
+            new PointView(userIdentifier).setVisible(true);  // ✓ userIdentifier 추가
         });
         mainPanel.add(btnOpenPointView);
         
