@@ -230,7 +230,7 @@ public class ecoPJ extends JFrame {
     static class ApiQuizFetcher extends SwingWorker<List<QuizQuestion>, Void> {
 
         // ⚠️ 사용자님의 유효한 Gemini Key입니다. (실제 사용 시 재확인 필요)
-        private static final String API_KEY = "AIzaSyAQohKyzJn_gXm6Q7RXW4tDu9dReOWgyQk";
+        private static final String API_KEY = "";        //추후에 실제값 입력 일단 삭제
         private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"; 
         private final ecoPJ gui;
 
@@ -380,4 +380,5 @@ public class ecoPJ extends JFrame {
             }
         }
     }
+
 }
