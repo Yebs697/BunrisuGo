@@ -270,7 +270,7 @@ public class PointShop extends JFrame {
         );
         
         if (confirm == JOptionPane.YES_OPTION) {
-            boolean success = pointDAO.addPoints(userIdentifier, "상점구매: " + productName, -price);
+            boolean success = pointDAO.addPoints(userIdentifier, PointDAO.TYPE_SHOP + ": " + productName, -price);
             
             if (success) {
                 JOptionPane.showMessageDialog(
