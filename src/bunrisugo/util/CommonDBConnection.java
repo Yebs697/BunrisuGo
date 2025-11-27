@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class CommonDBConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/BunrisuGo?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static final String USER = "root";
-    private static final String PASSWORD = "5868jj??";
+    private static final String PASSWORD = ""; //자신의 비밀번호로 변경
     
     private static Connection connection = null;
     
@@ -52,6 +52,7 @@ public class CommonDBConnection {
         }
     }
 }
+
 
 
 
