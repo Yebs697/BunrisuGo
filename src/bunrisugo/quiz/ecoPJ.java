@@ -158,7 +158,7 @@ public class ecoPJ extends JFrame {
     private void saveScoreToDB(int userScore, int totalQuestions) {
         // ⚠️ [수정 필수] 본인의 MySQL 아이디와 비밀번호를 입력하세요!
         String DB_ID = "root";    // 예: root
-        String DB_PW = "5868jj??";    // 예: 1234 (본인 비번으로 변경!)
+        String DB_PW = "";    // 예: 1234 (본인 비번으로 변경!)
 
         // MySQL 연결 정보 (DB이름: bunrisugo)
         String DB_URL = "jdbc:mysql://localhost:3306/bunrisugo?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8";
@@ -281,7 +281,7 @@ public class ecoPJ extends JFrame {
     // ------------------------------------------------
     static class ApiQuizFetcher extends SwingWorker<List<QuizQuestion>, Void> {
 
-        private static final String API_KEY = "AIzaSyDzaNZ1XfgyB33aEI_RYR2MEcrVvNQq4pA"; // 실제 키 확인 필요
+        private static final String API_KEY = ""; // 실제 키 확인 필요
         private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"; 
         
         // 📌 읽어올 PDF 파일 이름 설정
