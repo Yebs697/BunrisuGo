@@ -96,6 +96,15 @@ public class PointDAO {
     }
     
     public boolean addPoints(String userIdentifier, String changeType, int pointsChange) {
+                // 잔액 부족 시 차감 방지  
+            if (pointsChange < 0) {
+                    int currentPoints = getTotalPoints(userIdentifier);
+                    if (currentPoints + pointsChange < 0) {
+                        System.err.println("[오류] 잔액 부족 (현재: " + currentPoints + "p, 요청: " + pointsChange + "p)");
+                        return false; 
+                    }
+        }
+            
         Connection conn = null;
         PreparedStatement pstmt1 = null;
         PreparedStatement pstmt2 = null;
