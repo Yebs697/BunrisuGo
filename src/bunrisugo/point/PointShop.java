@@ -178,11 +178,8 @@ public class PointShop extends JFrame {
         try {
             // 여기에 'BunrisuGo/image/' 경로를 가장 먼저 추가했습니다.
             String[] paths = {
-                "BunrisuGo/image/" + imageFileName, 
-                "src/image/" + imageFileName,
-                "image/" + imageFileName,
-                "images/" + imageFileName,
-                imageFileName
+                "src/bunrisugo/point/image/" + imageFileName
+
             };
             
             ImageIcon icon = null;
@@ -272,7 +269,7 @@ public class PointShop extends JFrame {
         );
         
         if (confirm == JOptionPane.YES_OPTION) {
-            boolean success = pointDAO.addPoints(userIdentifier, "상점구매: " + productName, -price);
+            boolean success = pointDAO.addPoints(userIdentifier, PointDAO.TYPE_SHOP + ": " + productName, -price);
             
             if (success) {
                 JOptionPane.showMessageDialog(
@@ -298,4 +295,5 @@ public class PointShop extends JFrame {
         int currentPoints = pointDAO.getTotalPoints(userIdentifier);
         lblCurrentPoints.setText(currentPoints + " p");
     }
+
 }
