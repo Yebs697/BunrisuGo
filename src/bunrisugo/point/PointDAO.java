@@ -12,6 +12,15 @@ import java.util.List;
 import bunrisugo.util.CommonDBConnection;
 
 public class PointDAO {
+
+        // 히스토리 유형 상수 정의 (표준화)
+    public static final String TYPE_QUIZ = "퀴즈 정답";
+    public static final String TYPE_ATTENDANCE = "출석 체크";
+    public static final String TYPE_ATTENDANCE_BONUS = "7일 연속 보너스";
+    public static final String TYPE_INFO = "정보 제공";
+    public static final String TYPE_SHOP = "상점 구매";
+    public static final String TYPE_EVENT = "이벤트";
+    
     private Connection conn;
     
     public PointDAO() {
