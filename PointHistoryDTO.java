@@ -1,3 +1,5 @@
+package bunrisugo.point;
+
 import java.time.LocalDateTime;
 
 public class PointHistoryDTO {

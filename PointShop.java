@@ -1,3 +1,5 @@
+package bunrisugo.point;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -164,7 +166,6 @@ public class PointShop extends JFrame {
         return card;
     }
     
-    // ▼▼▼ [수정된 부분] 경로에 BunrisuGo/image/ 추가됨 ▼▼▼
     private JLabel createImageLabel(String imageFileName) {
         JLabel lblImage = new JLabel();
         lblImage.setPreferredSize(new Dimension(100, 80));
@@ -174,13 +175,8 @@ public class PointShop extends JFrame {
         lblImage.setBackground(new Color(240, 240, 240));
         
         try {
-            // 여기에 'BunrisuGo/image/' 경로를 가장 먼저 추가했습니다.
             String[] paths = {
-                "BunrisuGo/image/" + imageFileName, 
-                "src/image/" + imageFileName,
-                "image/" + imageFileName,
-                "images/" + imageFileName,
-                imageFileName
+                "src/bunrisugo/point/image/" + imageFileName
             };
             
             ImageIcon icon = null;

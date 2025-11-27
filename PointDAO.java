@@ -1,3 +1,5 @@
+package bunrisugo.point;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,6 +8,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import bunrisugo.util.CommonDBConnection;
 
 
 public class PointDAO {
@@ -21,7 +24,7 @@ public class PointDAO {
     private Connection conn;
     
     public PointDAO() {
-        this.conn = DBConnection.getConnection();
+        this.conn = CommonDBConnection.getConnection();
     }
     
     /**
