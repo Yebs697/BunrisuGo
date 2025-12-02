@@ -157,7 +157,15 @@ public class MainMenu extends JFrame {
     
     private void openQuiz() {
         try {
-            new ecoPJ();
+            // 1. 퀴즈 객체 생성
+            ecoPJ quizFrame = new ecoPJ();
+            
+            // 2. [중요] 퀴즈 창을 닫아도 메인 메뉴는 안 꺼지게 설정
+            // (원래 ecoPJ에는 EXIT_ON_CLOSE로 되어 있어서 프로그램이 통째로 꺼질 수 있음)
+            quizFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            // 3. [해결책] 화면에 보이게 설정
+            quizFrame.setVisible(true); 
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, 
                 "퀴즈 기능을 열 수 없습니다.\n" + e.getMessage(), 
