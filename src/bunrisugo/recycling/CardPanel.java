@@ -23,7 +23,7 @@ public class CardPanel extends JFrame {
         Container contentPane = getContentPane();
         contentPane.setLayout(new FlowLayout()); 
 
-        JPanel headerPanel = new JPanel();						//맨위 판넬
+        JPanel headerPanel = new JPanel();				 		//맨위 판넬
         headerPanel.setPreferredSize(new Dimension(800, 40));
         headerPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         
@@ -33,7 +33,7 @@ public class CardPanel extends JFrame {
         headerPanel.add(titleLabel);
         contentPane.add(headerPanel);
 
-        // 대상품목 이미지 개수와 높이 먼저 확인
+        // 대상품목 이미지 개수와 높이
         int imageCount = 0;
         int maxImageHeight = 0;
         int imageIndex = 1;
@@ -54,7 +54,7 @@ public class CardPanel extends JFrame {
         if (imageCount > 0) {
             int imagesPerRow = Math.max(1, 650 / 120); // 패널 너비 750px - 여백 100px, 이미지+텍스트 너비 120px + 여백 고려
             int rows = (int) Math.ceil((double) imageCount / imagesPerRow);
-            int calculatedHeight = Math.max(100, rows * (maxImageHeight + 40) + 40); // 텍스트 공간 20px 추가, 여백 포함
+            int calculatedHeight = Math.max(100, rows * (maxImageHeight + 40) + 40); 
             contentPanel.setPreferredSize(new Dimension(750, calculatedHeight));
         } else {
             contentPanel.setPreferredSize(new Dimension(750, 100));
@@ -62,7 +62,7 @@ public class CardPanel extends JFrame {
         
         contentPanel.setBorder(BorderFactory.createCompoundBorder(
         	    BorderFactory.createTitledBorder("대상 품목"), // 바깥쪽 테두리
-        	   new EmptyBorder(20, 50, 20, 50)               // 안쪽 여백 (위, 왼쪽, 아래, 오른쪽)
+        	   new EmptyBorder(20, 50, 20, 50)
         ));
         contentPane.add(contentPanel);
         
@@ -117,20 +117,26 @@ public class CardPanel extends JFrame {
         JPanel exMaterialPanel = new JPanel();					//예외품목
         exMaterialPanel.setLayout(new FlowLayout());
         
-        // 이미지 개수에 따라 패널 높이 동적 설정 (텍스트 공간 포함)
+        // 이미지 개수에 따라 패널 높이 
         if (exImageCount > 0) {
-            // 이미지가 한 줄에 들어갈 수 있는 개수 추정 (패널 너비 750px - 여백 100px 기준)
+            // 이미지가 한 줄에 들어갈 수 있는 개수 추정
             int imagesPerRow = Math.max(1, 650 / 120); // 이미지+텍스트 너비 120px + 여백 고려
             int rows = (int) Math.ceil((double) exImageCount / imagesPerRow);
-            int calculatedHeight = Math.max(100, rows * (maxImageHeight1 + 40) + 40); // 텍스트 공간 20px 추가, 여백 포함
+            int calculatedHeight = Math.max(100, rows * (maxImageHeight1 + 40) + 40);
             exMaterialPanel.setPreferredSize(new Dimension(750, calculatedHeight));
         } else {
             exMaterialPanel.setPreferredSize(new Dimension(750, 100));
         }
         
+        // 예외 품목 제목에 content 추가
+        String exMaterialContent = materialDAO.getExMaterialContent(materialId);
+        String exMaterialTitle = exMaterialContent.isEmpty() 
+            ? "로 배출해야되는 품목" 
+            : exMaterialContent;
+        
         exMaterialPanel.setBorder(BorderFactory.createCompoundBorder(
-        	    BorderFactory.createTitledBorder("로 배출해야되는 품목"), // 바깥쪽 테두리
-        	   new EmptyBorder(20, 50, 20, 50)               // 안쪽 여백 (위, 왼쪽, 아래, 오른쪽)
+        	    BorderFactory.createTitledBorder(exMaterialTitle), // 바깥쪽 테두리
+        	   new EmptyBorder(20, 50, 20, 50)
         ));
 
         // 예외품목 이미지 로드 및 표시
@@ -252,7 +258,6 @@ public class CardPanel extends JFrame {
      * @return ImageIcon 객체, 파일이 없으면 null
      */
     private ImageIcon loadImage(String imageName) {
-        // 지원하는 이미지 확장자 목록
         String[] extensions = {".png", ".jpg", ".jpeg", ".gif"};
         
         for (String ext : extensions) {
@@ -262,7 +267,6 @@ public class CardPanel extends JFrame {
             if (imageFile.exists()) {
                 ImageIcon originalIcon = new ImageIcon(imagePath);
                 if (originalIcon.getIconWidth() > 0 && originalIcon.getIconHeight() > 0) {
-                    // 이미지 크기 조정 (최대 너비 200px, 비율 유지)
                     return resizeImage(originalIcon, 80);
                 }
             }
