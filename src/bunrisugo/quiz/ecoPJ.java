@@ -58,6 +58,7 @@ public class ecoPJ extends JFrame {
 
     public ecoPJ() {
         super("분리수GO - AI 퀴즈");
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setupGUI();
         fetchQuestions(); 
         setVisible(true);
@@ -68,7 +69,7 @@ public class ecoPJ extends JFrame {
     // ------------------------------------------------
     private void setupGUI() {
         // 1. 메인 프레임 설정
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(600, 750); 
         setLayout(new BorderLayout());
         getContentPane().setBackground(COLOR_BACKGROUND);
