@@ -85,6 +85,9 @@ CREATE DATABASE javapj DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 ```
 
 #### Step 3: 테이블 생성
+
+##### 3-1. BunrisuGo 데이터베이스 (출석, 포인트, 퀴즈)
+
 프로젝트 루트에 있는 `BunrisuGov2.sql` 파일을 실행합니다:
 
 ```bash
@@ -97,7 +100,23 @@ use BunrisuGo;
 source /path/to/BunrisuGov2.sql;
 ```
 
-> **참고:** `javapj` 데이터베이스의 테이블은 별도 제공되는 SQL 파일로 생성하거나, 재활용품 데이터를 수동으로 입력해야 합니다.
+##### 3-2. javapj 데이터베이스 (재활용품 검색)
+
+재활용품 검색 기능을 위한 `javapj` 데이터베이스 테이블 및 데이터를 생성합니다.
+
+**SQL 파일:** `javapj.sql` (프로젝트에 포함됨)
+
+**실행 방법:**
+
+```bash
+# 방법 1: 명령어로 실행
+mysql -u root -p javapj < javapj.sql
+
+# 방법 2: MySQL 내부에서 실행
+mysql -u root -p
+use javapj;
+source /path/to/javapj.sql;
+```
 
 #### Step 4: Java 코드에 MySQL 비밀번호 설정
 
@@ -220,6 +239,7 @@ java -cp "bin;lib/*" bunrisugo.main.MainMenu
 ### 4. 코드 문의처
 
 ###### mayonnaiseybs@gmail.com ( 예병성 2020243085)
+
 
 
 
