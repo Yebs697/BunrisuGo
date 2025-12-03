@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class DatabaseConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/javapj?serverTimezone=UTC";
     private static final String ID = "root";
+    private static final String PASSWORD = ""; 
     
     /**
      * 데이터베이스 연결을 생성합니다.
@@ -32,7 +33,7 @@ public class DatabaseConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
             // JDBC 드라이버를 로드함
             
-            conn = DriverManager.getConnection(URL, ID, pw);
+            conn = DriverManager.getConnection(URL, ID, PASSWORD);
             // url과 id, 패스워드로 데이터베이스와 연결
             
             System.out.println("DB연결완료");
@@ -67,4 +68,5 @@ public class DatabaseConnection {
         }
     }
 }
+
 
