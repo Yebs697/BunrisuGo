@@ -217,8 +217,9 @@ java -cp "bin;lib/*" bunrisugo.main.MainMenu
 ---
 
 
-4. 코드 문의처
+### 4. 코드 문의처
 
+###### mayonnaiseybs@gmail.com ( 예병성 2020243085)
 
 
 
