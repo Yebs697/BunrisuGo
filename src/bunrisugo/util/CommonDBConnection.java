@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * BunrisuGo 데이터베이스 사용
  */
 public class CommonDBConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/BunrisuGo?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String URL = "jdbc:mysql://localhost:3306/BunrisuGo?useSSL=false&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true";
     private static final String USER = "root";
     private static final String PASSWORD = "";
     
@@ -52,6 +52,7 @@ public class CommonDBConnection {
         }
     }
 }
+
 
 
 
