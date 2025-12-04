@@ -181,7 +181,7 @@ public class DatabaseConnection {
 ├── recycling_guide.pdf    # AI 퀴즈용 재활용 가이드 PDF
 ├── BunrisuGov2.sql        # 데이터베이스 스키마
 └── README.md
-
+```
 ---
 ### 2.4 API 키 설정
 
@@ -238,7 +238,11 @@ java -cp "bin;lib/*" bunrisugo.main.MainMenu
 
 ### 4. 코드 문의처
 
+###### jounhj02@gmail.com (전희재 2021243076)
+- 재활용품 검색, 코드 병합 및 관리, 테스트 총괄 전담
+
 ###### mayonnaiseybs@gmail.com ( 예병성 2020243085)
+- DB, Point 전담
 
 
 
