@@ -239,10 +239,11 @@ java -cp "bin;lib/*" bunrisugo.main.MainMenu
 ### 4. 코드 문의처
 
 ###### jounhj02@gmail.com (전희재 2021243076)
-- 재활용품 검색, 코드 병합 및 관리, 테스트 총괄 전담
+- 재활용품 검색, 개별 기능 병합 및 관리, 테스트 총괄 전담
 
 ###### mayonnaiseybs@gmail.com ( 예병성 2020243085)
 - DB, Point 전담
+
 
 
 
