@@ -1,8 +1,9 @@
 package bunrisugo.quiz;
 
-import com.google.gson.Gson;
 import bunrisugo.point.PointDAO;
 import bunrisugo.point.PointShop; 
+
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
