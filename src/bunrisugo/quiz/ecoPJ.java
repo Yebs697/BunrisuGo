@@ -417,7 +417,7 @@ public class ecoPJ extends JFrame {
     // ------------------------------------------------
     static class ApiQuizFetcher extends SwingWorker<List<QuizQuestion>, Void> {
 
-        // ⚠️ 입력하신 새 API 키를 적용했습니다.
+        //  입력하신 새 API 키를 적용했습니다.
         private static final String API_KEY = ""; 
         
         
@@ -434,7 +434,7 @@ public class ecoPJ extends JFrame {
         private String extractTextFromPdf() {
             File file = new File(PDF_FILE_NAME);
             if (!file.exists()) {
-                System.out.println("⚠️ PDF 파일을 찾을 수 없음: " + file.getAbsolutePath());
+                System.out.println(" PDF 파일을 찾을 수 없음: " + file.getAbsolutePath());
                 return "- 깨진 유리는 종량제 봉투에 버려야 한다.\n- 칫솔은 재활용이 불가능하다.";
             }
 
@@ -451,7 +451,7 @@ public class ecoPJ extends JFrame {
         protected List<QuizQuestion> doInBackground() throws Exception {
             HttpClient client = HttpClient.newHttpClient();
             String pdfContent = extractTextFromPdf();
-            System.out.println("📄 PDF 로드 완료 (" + pdfContent.length() + "자)");
+            System.out.println(" PDF 로드 완료 (" + pdfContent.length() + "자)");
 
             String prompt = String.format("""
                 당신은 쓰레기 분리배출 교육 전문가입니다.
